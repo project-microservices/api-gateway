@@ -18,7 +18,7 @@ async def login(
 ) -> ServiceResponse:
     return await interactor(
         request=RequestToService(
-            send_to='auth_login',
+            send_to='/auth/login',
             headers=None,
             body=None
         )

@@ -1,20 +1,12 @@
 from typing import cast
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
-from starlette.types import ExceptionHandler
+
+from src.app.domain.common.exceptions import DomainValidationError
 
 
-class ApiError(Exception):
-    message: str
-
-    def __init__(self, message: str | None = None) -> None:
-        super.__init__()
-        if message is None:
-            assert hasattr(self, "message")
-        else:
-            self.message = message
-
-
-async def validation_exc_handler(exception: ApiError) -> JSONResponse:
+async def validation_exc_handler(
+    request: Request, exception: DomainValidationError
+) -> JSONResponse:
     return JSONResponse(status_code=422, content={"message": exception.message})

@@ -39,5 +39,5 @@ class Headers:
     headers: Optional[Dict[Any, Any]] = None
 
     def validate(self: Self) -> None:
-        if not isinstance(self.headers, dict) or not isinstance(self.headers, None):
+        if self.headers!=None and not isinstance(self.headers, dict):
             raise DomainValidationError('headers must be dict or None')
