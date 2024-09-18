@@ -6,7 +6,7 @@ from src.app.application.contracts.requests.requests import RequestToService
 from src.app.application.contracts.requests.responses import ServiceResponse
 from src.app.application.protocols.interactor import Interactor
 from src.app.domain.requests.repositories import RequestsRepository
-from src.app.domain.requests.value_objects import Body, Headers,  Stream, UUID
+from src.app.domain.requests.value_objects import Body, Headers, Stream, UUID
 
 
 class MakeRequestToService(Interactor[RequestToService, ServiceResponse]):

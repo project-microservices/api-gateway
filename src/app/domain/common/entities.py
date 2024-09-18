@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 from src.app.domain.common.values_objects import ValueObject
 
-DomainEntityId = TypeVar("DomainEntityPath", bound=ValueObject)
+DomainEntityId = TypeVar("DomainEntityId", bound=ValueObject)
 
 
 @dataclass(frozen=True)

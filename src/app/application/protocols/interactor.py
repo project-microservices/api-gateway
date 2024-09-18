@@ -1,7 +1,7 @@
 from typing import Generic, Protocol, TypeVar, Self
 
-Request = TypeVar('Req')
-Response = TypeVar('Res')
+Request = TypeVar('Request')
+Response = TypeVar('Response')
 
 
 class Interactor(Generic[Request, Response], Protocol):
