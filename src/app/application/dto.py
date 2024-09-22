@@ -4,6 +4,7 @@ from dataclasses import dataclass
 class RequestDTO:
     body: dict[str]
     headers: dict[str]
+    send_to: str
 
 
 @dataclass(frozen=True)

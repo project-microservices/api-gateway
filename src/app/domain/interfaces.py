@@ -1,7 +1,7 @@
 from typing import Protocol, Self
 from abc import abstractmethod
 
-from src.app.domain.request_to_service.entity import RequestEntity
+from app.domain.entity import RequestEntity
 
 
 class RequestInterface(Protocol):

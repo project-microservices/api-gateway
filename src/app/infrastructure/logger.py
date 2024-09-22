@@ -24,9 +24,8 @@ class LokiHandler(logging.Handler):
         self.tags.update(
             dict(
                 severity=record.levelname.lower(),
-                logger=record.name
+                logger=record.name)
             )
-        )
         stream: Dict[str, Any] = dict(
             stream=self.tags,
             values=[

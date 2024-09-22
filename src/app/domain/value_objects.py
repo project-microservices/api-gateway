@@ -1,7 +1,7 @@
 from typing import Self
 
 from src.app.domain.common.value_objects import ValueObject
-from src.app.domain.exceptions import DomainValidationException
+from src.app.domain.common.exceptions import DomainValidationException
 
 
 class RequestUUID(ValueObject[str]):
@@ -27,3 +27,13 @@ class RequestHeaders(ValueObject[dict]):
                 f'Headers must be dict or None, not {type(self.object)}'
             )
 
+class SendTo(ValueObject[str]):
+    def validate(self: Self) -> None:
+        if not self.object:
+            raise DomainValidationException(
+                'SendTo is required'
+            )
+        if not isinstance(self.object, str):
+            raise DomainValidationException(
+                f'SendTo must be str, not {type(self.object)}'
+            )
