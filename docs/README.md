@@ -1,2 +1,0 @@
-# This project writed for special peoples George and PavelEpanov, special for they i write comments to code
-# and explain every string also i writing this project on golan language. To my mind I must find Pavel's repo and compare my code with his code
